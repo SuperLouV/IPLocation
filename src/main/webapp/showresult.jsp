@@ -22,6 +22,8 @@
 %>
 <div class="htmleaf-container">
     <div class="container">
+        <form method="post" action="/IPLocation_war_exploded/SNSServlet" name="form_table" id="form_table" onsubmit="return check_post()">
+
         <div class="row">
             <div class="col-sm-12 text-center">
                 <a href="../search.jsp"><h1 class="h1">Start Search IP Address
@@ -42,16 +44,36 @@
                         <th>longitude</th>
                     </tr>
                     </thead>
+                    <%
+                        String ip=(String)request.getAttribute( "ip_info");
+                        String city=(String)request.getAttribute( "city_info");
+                        String region=(String)request.getAttribute( "region_info");
+                        String country=(String)request.getAttribute( "country_info");
+                        String latitude=(String)request.getAttribute( "latitude_info");
+                        String longitude=(String)request.getAttribute( "longitude_info");
+
+
+
+                    %>
+                    <input type="hidden" name="ip" value= <%=ip%> >
+                    <input type="hidden" name="city" value= <%=city%> >
+                    <input type="hidden" name="region" value= <%=region%> >
+                    <input type="hidden" name="country" value= <%=country%> >
+                    <input type="hidden" name="latitude" value= <%=latitude%> >
+                    <input type="hidden" name="longitude" value= <%=longitude%> >
+
                     <tbody>
 
                     <tr>
-                        <td><%=(String)request.getAttribute( "ip_info")%></td>
-                        <td><%=(String)request.getAttribute( "city_info")%></td>
-                        <td><%=(String)request.getAttribute( "region_info")%></td>
-                        <td><%=(String)request.getAttribute( "country_info")%></td>
-                        <td><%=(String)request.getAttribute( "latitude_info")%></td>
-                        <td><%=(String)request.getAttribute( "longitude_info")%></td>
+                        <td><%=ip%></td>
+
+                        <td><%=city%></td>
+                        <td><%=region%></td>
+                        <td><%=country%></td>
+                        <td><%=latitude%></td>
+                        <td><%=longitude%></td>
                     </tr>
+
 
                     </tbody>
                 </table>
@@ -69,6 +91,22 @@
             </center>
 
         </div>
+        <div >
+            <center>
+                <h3>
+
+            +1 <input  style="width: 250px;display: inline"  placeholder=" mobil number" id="mobile" name="mobile">
+                <button type="submit">Send with message</button>
+                </h3>
+            </center>
+
+
+
+        </div>
+        </form>
+
+
+
     </div>
 </div>
 
@@ -94,6 +132,26 @@
             pageNumbers: true
         });
     });
+
+        function check_post() {
+            var n=form_table.mobile.value;
+            if(n == null || n == undefined || n == ''||n.length!=10){
+                alert("please check mobile number")
+                return false;
+
+            }else {
+                alert("send successful")
+                return true
+
+            }
+
+
+
+        }
+
+
+
+
 </script>
 </body>
 </html>

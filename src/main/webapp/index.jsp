@@ -28,7 +28,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <a href="search.jsp"><h1 class="h1">Start Search IP Address
+                <a href="search.jsp"><h1 class="h1">Start to Search IP Address
                 </h1></a>
 
 
@@ -138,7 +138,6 @@
             return false;
 
         }else {
-            alert(n)
             return true
 
         }
