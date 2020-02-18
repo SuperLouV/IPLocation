@@ -17,16 +17,20 @@ import com.amazonaws.services.sns.model.PublishRequest;
 import com.amazonaws.services.sns.model.SubscribeRequest;
 
 public class SNSPublisher {
-    private static final String TOPIC_ARN_EMAIL="arn:aws:sns:us-east-2:858789323577:MyTopic";
-    private static final String EMAIL_SUBJECT="this is a test sns";
-    private static final String EMAIL_MESSAGE ="hello world from SNS";
-    private static final String EMAIL_SUBJECT_JAVA = "Test SNS Notification Mail From Java";
-    private static final String EMAIL_MESSAGE_JAVA = "We are able to create topic, subscribe to that topic and publish to that topic from java";
-    private static AmazonSNSClient snsClient=null;
+
 
     public void SendMessage(String SMSMessage,String mobile ){
         //Used for authenticating to AWS
-        BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIA4P46VEM4SQBFR63G", "WPMQCnTlibxtoiBWkpNMhBT/yIgE/zPfxCdbTu2f");
+        String accesskey="";
+
+
+
+        String secrekey="";
+
+
+
+
+        BasicAWSCredentials awsCreds = new BasicAWSCredentials(accesskey,secrekey);
 
         //Create SNS Client
         AmazonSNS snsClient = AmazonSNSClient
@@ -36,20 +40,22 @@ public class SNSPublisher {
                 .build();
 
 
+
         snsClient.publish(new PublishRequest().withMessage(SMSMessage).withPhoneNumber(mobile));
 
     }
 
 
 
-//    public static void main(String[] args) {
-//        SNSPublisher snsPublisher=new SNSPublisher();
-//        String s="testttttttt";
-//        String mobile="+12018858017";
-//        snsPublisher.SendMessage(s,mobile);
-//
-//
-//}
+    public static void main(String[] args) {
+        SNSPublisher snsPublisher=new SNSPublisher();
+        String s="ppppppppppp";
+        String mobile="+12018858017";
+//        String mobile="+12014232678";
+        snsPublisher.SendMessage(s,mobile);
+
+
+}
 
 
 

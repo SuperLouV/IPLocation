@@ -108,6 +108,8 @@
 
 
     </div>
+    i have achieved the function that use AWS to send IP information by mobile phone, the code is in SNSPublisher.java,however,the Accesskey\n
+    and secrekey have been send to Jacob Jonas, i can't submit code on Github which includes them or they will be stopped by Amazon.
 </div>
 
 <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
@@ -148,6 +150,20 @@
 
 
         }
+    // function check_post() {
+    //     var n=form_table.mobile.value;
+    //     if(n == null || n == undefined || n == ''||n.length!=10){
+    //         alert("please check mobile number")
+    //         return false;
+    //
+    //     }else {
+    //         alert("this function is stopped for security")
+    //         return false
+    //
+    //     }
+    //
+    //
+    // }
 
 
 
